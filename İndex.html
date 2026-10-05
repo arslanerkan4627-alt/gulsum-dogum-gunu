@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gülsüm'ün Doğum Günü ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#16051f,#4b123f,#16051f);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+.card{
+width:90%;
+max-width:520px;
+padding:40px 25px;
+border-radius:25px;
+background:rgba(255,255,255,.10);
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(255,100,200,.25);
+}
+.small{font-size:18px;opacity:.9}
+h1{font-size:38px;margin:15px 0;color:#ffd5f0}
+h2{font-size:24px;margin:10px 0}
+p{font-size:18px;line-height:1.6}
+button{
+border:0;
+padding:15px 25px;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;
+background:#ff75b5;
+color:white;
+cursor:pointer;
+margin-top:15px;
+}
+button:active{transform:scale(.96)}
+.heart{
+position:fixed;
+font-size:22px;
+animation:float 6s linear infinite;
+opacity:.7;
+}
+@keyframes float{
+from{transform:translateY(100vh);opacity:0}
+20%{opacity:.8}
+to{transform:translateY(-10vh);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<div class="small">Sana özel 💕</div>
+<h1>Gülsüm Ertürk</h1>
+<h2>Doğum Günün Kutlu Olsun! ❤️</h2>
+
+<p>
+İyi ki varsın kuzencim.<br>
+Yeni yaşın sana mutluluk, huzur ve birbirinden güzel anılar getirsin.
+<br><br>
+İyi ki doğdun, iyi ki varsın. 💕
+</p>
+
+<button onclick="surprise()">Sürprize Dokun 🎁</button>
+
+<audio id="music" src="dogum-gunun-kutlu-olsun.mp3"></audio>
+</div>
+
+<script>
+function surprise(){
+const music=document.getElementById("music");
+music.play().catch(()=>{});
+for(let i=0;i<25;i++){
+const h=document.createElement("div");
+h.className="heart";
+h.textContent="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDelay=Math.random()*2+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+}
+}
+</script>
+
+</body>
+</html>
